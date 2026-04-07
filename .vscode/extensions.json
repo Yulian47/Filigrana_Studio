@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode",
+        "ritwickdey.LiveServer",
+        "syler.sass-indented",
+        "ecmel.vscode-html-css",
+        "dbaeumer.vscode-eslint",
+        "ms-vscode.web-indent",
+        "formulahendry.live-server",
+        "Zignd.html-css-class-completion"
+    ]
+}
