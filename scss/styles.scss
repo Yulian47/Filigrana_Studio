@@ -98,11 +98,17 @@ a {
     gap: 2rem;
 
     a {
-      color: $text-color;
+      background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       font-weight: 500;
 
       &:hover {
-        color: #000;
+        background: linear-gradient(90deg, #966429, rgba(48, 32, 13, 0.79));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
       }
     }
   }
@@ -129,18 +135,20 @@ a {
   border-radius: $border-radius;
   cursor: pointer;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 300;
+  letter-spacing: 0.18em;
   transition: $transition;
   display: inline-block;
 
   &-primary {
-    background-color: #000;
+    background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+    border: none;
     color: $white;
 
     &:hover {
-      background-color: #111;
+      background: linear-gradient(90deg, #966429, rgba(48, 32, 13, 0.79));
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 5px 15px rgba(48, 32, 13, 0.35);
     }
   }
 }
@@ -152,11 +160,12 @@ a {
     url("../assets/icons/img/MARK8889-Edit.jpg") no-repeat center center;
   background-size: cover;
   color: $white;
-  padding: 100px 0;
+  padding: 160px 0 100px;
   text-align: center;
   min-height: 100vh;
   min-height: 100svh;
   @include flex-center;
+  align-items: flex-start;
 
   .hero-content {
     max-width: 600px;
@@ -165,6 +174,10 @@ a {
       font-size: 3rem;
       margin-bottom: 1rem;
       animation: slideInDown 0.8s ease-out;
+      background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
 
       @include responsive($mobile) {
         font-size: 2rem;
@@ -175,6 +188,10 @@ a {
       font-size: 1.2rem;
       margin-bottom: 2rem;
       animation: slideInUp 0.8s ease-out 0.2s both;
+      background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .btn {
@@ -192,7 +209,10 @@ a {
     font-size: 2.5rem;
     margin-bottom: 5rem;
     text-align: center;
-    color: #000;
+    background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .about-content {
@@ -256,7 +276,10 @@ a {
     font-size: 2.5rem;
     margin-bottom: 5rem;
     text-align: center;
-    color: #000;
+    background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .portfolio-grid {
@@ -301,7 +324,7 @@ a {
         bottom: 1.5rem;
         left: 1.5rem;
         color: $white;
-        font-size: 1.4rem;
+        font-size: 1.8rem;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         margin: 0;
         z-index: 1;
@@ -317,6 +340,7 @@ a {
   }
 
   .faq-list {
+    margin-top: 1.5rem;
     padding: 0 0 1.5rem;
 
     .faq-item {
@@ -374,7 +398,10 @@ a {
     font-size: 2.5rem;
     margin-bottom: 5rem;
     text-align: center;
-    color: #000;
+    background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
 }
@@ -388,7 +415,10 @@ a {
     font-size: 2.5rem;
     margin-bottom: 5rem;
     text-align: center;
-    color: #000;
+    background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .faq-section-list {
@@ -447,7 +477,10 @@ a {
     font-size: 2.5rem;
     margin-bottom: 5rem;
     text-align: center;
-    color: #000;
+    background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .contact-wrapper {
@@ -513,8 +546,8 @@ a {
 
       &:focus {
         outline: none;
-        border-color: $primary-color;
-        box-shadow: 0 0 10px rgba($primary-color, 0.2);
+        border-color: #30200D;
+        box-shadow: 0 0 10px rgba(48, 32, 13, 0.2);
       }
     }
 
@@ -533,6 +566,24 @@ a {
 
   p {
     margin: 0;
+  }
+
+  .footer-credits {
+    margin-top: 0.75rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.85rem;
+    color: #999;
+
+    a {
+      color: #999;
+      text-decoration: none;
+
+      &:hover {
+        color: #30200D;
+      }
+    }
   }
 }
 
