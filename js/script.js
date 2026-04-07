@@ -49,36 +49,47 @@ function initContactForm() {
       e.preventDefault();
 
       // Get form values
-      const name = this.querySelector('input[type="text"]').value;
-      const email = this.querySelector('input[type="email"]').value;
-      const message = this.querySelector("textarea").value;
+      const name = this.querySelector('input[name="name"]').value;
+      const email = this.querySelector('input[name="email"]').value;
+      const message = this.querySelector('textarea[name="message"]').value;
 
       // Simple validation
       if (!name.trim() || !email.trim() || !message.trim()) {
-        alert("Будь ласка, заповніть всі поля");
+        alert("Vennligst fyll ut alle feltene");
         return;
       }
 
       // Email validation
       if (!isValidEmail(email)) {
-        alert("Будь ласка, введіть коректну електронну пошту");
+        alert("Vennligst skriv inn en gyldig e-postadresse");
         return;
       }
 
-      // Here you would typically send the form data to a server
-      console.log("Form Data:", {
-        name: name,
-        email: email,
-        message: message,
-      });
+      // Send via Formspree
+      const submitBtn = this.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sender...";
 
-      // Success message
-      alert(
-        "Дякуємо за ваше повідомлення! Ми зв'яжемося з вами найближчим часом.",
-      );
-
-      // Reset form
-      this.reset();
+      fetch(this.action, {
+        method: "POST",
+        body: new FormData(this),
+        headers: { Accept: "application/json" },
+      })
+        .then(function (response) {
+          if (response.ok) {
+            alert("Takk for din melding! Vi tar kontakt med deg snart.");
+            contactForm.reset();
+          } else {
+            alert("Noe gikk galt. Vennligst prøv igjen.");
+          }
+        })
+        .catch(function () {
+          alert("Noe gikk galt. Vennligst prøv igjen.");
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Send";
+        });
     });
   }
 }

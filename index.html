@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
@@ -293,10 +295,11 @@
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
           </div>
-          <form class="contact-form" id="contactForm">
-            <input type="text" placeholder="Ditt navn" required />
-            <input type="email" placeholder="Din e-post" required />
+          <form class="contact-form" id="contactForm" action="https://formspree.io/f/post@olhabratash.no" method="POST">
+            <input type="text" name="name" placeholder="Ditt navn" required />
+            <input type="email" name="email" placeholder="Din e-post" required />
             <textarea
+              name="message"
               placeholder="Din melding"
               rows="5"
               required
