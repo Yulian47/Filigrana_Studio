@@ -139,6 +139,10 @@ a {
   letter-spacing: 0.18em;
   transition: $transition;
   display: inline-block;
+  box-sizing: border-box;
+  line-height: 1.6;
+  vertical-align: middle;
+  font-family: inherit;
 
   &-primary {
     background: linear-gradient(90deg, rgba(48, 32, 13, 0.79), #966429);
@@ -326,6 +330,20 @@ a {
         color: $white;
         font-size: 1.8rem;
         text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        margin: 0;
+        z-index: 1;
+      }
+
+      h4 {
+        position: absolute;
+        bottom: 0.75rem;
+        left: 1.5rem;
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.75rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
         margin: 0;
         z-index: 1;
       }
