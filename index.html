@@ -10,6 +10,13 @@
     <link rel="canonical" href="https://www.filigrana.no/" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- hreflang -->
+    <link rel="alternate" hreflang="nb" href="https://www.filigrana.no/" />
+    <link rel="alternate" hreflang="x-default" href="https://www.filigrana.no/" />
+
     <!-- Open Graph (Facebook / sosiale medier) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.filigrana.no/" />
@@ -47,10 +54,102 @@
     }
     </script>
 
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Hjem",
+          "item": "https://www.filigrana.no/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tjenester",
+          "item": "https://www.filigrana.no/#portfolio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Kurs",
+          "item": "https://www.filigrana.no/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Kontakt",
+          "item": "https://www.filigrana.no/#contact"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Structured Data: FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hvordan bestiller jeg time?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du kan bestille manikyr, pedikyr eller elektrolyse hårfjerning i Stavanger enkelt via Timma.no, eller kontakte meg direkte på telefon eller e-post."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hva er avbestillingsreglene?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Vennligst gi beskjed minst 24 timer før avtalt tid dersom du ønsker å avbestille eller endre timen. Ved avbestilling senere enn 24 timer kan det påløpe et gebyr."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvilke betalingsmetoder godtar du?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Jeg godtar betaling med kort (Visa, Mastercard), Vipps og kontant betaling. Betaling skjer etter utført behandling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er det gratis parkering?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, det er gratis parkering tilgjengelig rett utenfor salongen på Heiamyrå 19, Stavanger."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Er resultatet av elektrolyse permanent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, elektrolyse hårfjerning er den eneste metoden som er godkjent som permanent. Hos Filigrana Studio i Stavanger er resultatet varig etter fullført behandlingsserie."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tilbyr du gavekort?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ja, jeg tilbyr gavekort som kan brukes på alle tjenester. Kontakt meg for mer informasjon om kjøp av gavekort."
+          }
+        }
+      ]
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="assets/icons/logo/logo1.png" />
+    <link rel="icon" type="image/png" href="assets/icons/logo/favicon.png" />
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
