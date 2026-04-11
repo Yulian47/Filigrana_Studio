@@ -1,15 +1,15 @@
-# Filigrana Studio - Landing Page
+# Filigrana Studio
 
-Сучасна, адаптивна лендінг сторінка для дизайнерської студії Filigrana Studio.
+Nettside for Filigrana Studio – profesjonell manikyr, pedikyr og elektrolyse hårfjerning i Stavanger og Sandnes. Sertifisert spesialist Olha Bratash med over 10 års erfaring.
 
-## Можливості
+🌐 [www.filigrana.no](https://www.filigrana.no)
 
-- 📱 Повністю адаптивний дизайн (мобільне-перший підхід)
-- 🎨 Сучасний дизайн з анімаціями
-- ⚡ Виразні переходи та ефекти наведення
-- 🔍 SEO-оптимізований HTML
-- 📦 Структурований код
-- 🎯 Гладкий скролінг та навігація
+## Tjenester
+
+- Manikyr og negledesign i Stavanger
+- Pedikyr i Stavanger
+- Elektrolyse hårfjerning (permanent) i Stavanger og Sandnes
+- Kurs innen manikyr, pedikyr og elektrolyse
 
 ## Структура проекту
 
