@@ -3,19 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
     <title>Filigrana Studio – Manikyr, Pedikyr &amp; permanent hårfjerning med elektrolyse i Stavanger og Sandnes</title>
     <meta name="description" content="Profesjonell manikyr, pedikyr og  permanent hårfjerning med elektrolyse i Stavanger og Sandnes. Sertifisert spesialist Olha Bratash – over 10 års erfaring. Bestill time enkelt via Timma.no." />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.filigrana.no/" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-
-    <!-- Robots -->
-    <meta name="robots" content="index, follow" />
-
-    <!-- hreflang -->
-    <link rel="alternate" hreflang="nb" href="https://www.filigrana.no/" />
-    <link rel="alternate" hreflang="x-default" href="https://www.filigrana.no/" />
 
     <!-- Open Graph (Facebook / sosiale medier) -->
     <meta property="og:type" content="website" />
@@ -51,98 +46,6 @@
       "image": "https://www.filigrana.no/assets/icons/img/MARK8889-Edit.jpg",
       "priceRange": "$$",
       "openingHours": "Mo-Fr 09:00-18:00"
-    }
-    </script>
-
-    <!-- Structured Data: BreadcrumbList -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Hjem",
-          "item": "https://www.filigrana.no/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Tjenester",
-          "item": "https://www.filigrana.no/#portfolio"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "Kurs",
-          "item": "https://www.filigrana.no/#services"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Kontakt",
-          "item": "https://www.filigrana.no/#contact"
-        }
-      ]
-    }
-    </script>
-
-    <!-- Structured Data: FAQ -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Hvordan bestiller jeg time?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Du kan bestille manikyr, pedikyr eller elektrolyse hårfjerning i Stavanger enkelt via Timma.no, eller kontakte meg direkte på telefon eller e-post."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Hva er avbestillingsreglene?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Vennligst gi beskjed minst 24 timer før avtalt tid dersom du ønsker å avbestille eller endre timen. Ved avbestilling senere enn 24 timer kan det påløpe et gebyr."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Hvilke betalingsmetoder godtar du?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Jeg godtar betaling med kort (Visa, Mastercard), Vipps og kontant betaling. Betaling skjer etter utført behandling."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Er det gratis parkering?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja, det er gratis parkering tilgjengelig rett utenfor salongen på Heiamyrå 19, Stavanger."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Er resultatet av elektrolyse permanent?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja, elektrolyse hårfjerning er den eneste metoden som er godkjent som permanent. Hos Filigrana Studio i Stavanger er resultatet varig etter fullført behandlingsserie."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Tilbyr du gavekort?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Ja, jeg tilbyr gavekort som kan brukes på alle tjenester. Kontakt meg for mer informasjon om kjøp av gavekort."
-          }
-        }
-      ]
     }
     </script>
 
@@ -236,7 +139,13 @@
         <h2>TJENESTER</h2>
         <div class="portfolio-grid">
           <div class="portfolio-wrapper">
-            <a href="https://timma.no/salong/olha-bratash?searchTerms=nails&searchTerms=manicure-and-pedicure&searchTerms=manicure" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+            <a
+              href="https://timma.no/salong/olha-bratash?searchTerms=nails&searchTerms=manicure-and-pedicure&searchTerms=manicure"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="portfolio-item"
+              id="manikyrCard"
+            >
               <img src="./assets/icons/img/MARK8575.jpg" alt="Manikyr" loading="lazy" />
               <h3>MANIKYR</h3>
             </a>
@@ -256,7 +165,13 @@
             </div>
           </div>
           <div class="portfolio-wrapper">
-            <a href="https://timma.no/salong/olha-bratash?isSearch=true&searchTerms=all&searchTerms=Elektrolyse%20" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+            <a
+              href="https://timma.no/salong/olha-bratash?isSearch=true&searchTerms=all&searchTerms=Elektrolyse%20"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="portfolio-item"
+              id="elektrolyseCard"
+            >
               <img src="./assets/icons/img/2025-10-22 11.32.50.jpg" alt="Elektrolyse" loading="lazy" />
               <h3>ELEKTROLYSE</h3>
             </a>
@@ -276,7 +191,13 @@
             </div>
           </div>
           <div class="portfolio-wrapper">
-            <a href="https://timma.no/salong/olha-bratash?searchTerms=nails&searchTerms=manicure-and-pedicure&searchTerms=pedicure" target="_blank" rel="noopener noreferrer" class="portfolio-item">
+            <a
+              href="https://timma.no/salong/olha-bratash?searchTerms=nails&searchTerms=manicure-and-pedicure&searchTerms=pedicure"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="portfolio-item"
+              id="pedikyrCard"
+            >
               <img src="./assets/icons/img/for timma pedikyr img.jpeg" alt="Pedikyr" loading="lazy" />
               <h3>PEDIKYR</h3>
             </a>
@@ -313,13 +234,283 @@
       </div>
     </section>
 
+    <aside class="product-aside" id="manikyrAside" aria-hidden="true">
+      <button class="product-aside__backdrop" type="button" aria-label="Lukk panel" data-manikyr-aside-close></button>
+      <div class="product-aside__panel" role="dialog" aria-modal="true" aria-labelledby="manikyrAsideTitle">
+        <button class="product-aside__back" type="button" data-manikyr-aside-close>
+          <span class="logo product-aside__logo" aria-hidden="true"></span>
+          <span>tilbake</span>
+        </button>
+        <div class="product-aside__content">
+          <img src="./assets/icons/img/MARK8575.jpg" alt="Manikyr" loading="lazy" />
+          <h3 id="manikyrAsideTitle">MANIKYR</h3>
+          <p class="product-aside__lead">
+            Profesjonell manikyr med fokus på skånsom neglepleie, holdbarhet
+            og design tilpasset din stil.
+          </p>
+          <div class="pedikyr-price-list" aria-label="Manikyr prisliste">
+            <article class="pedikyr-price-item">
+              <h4>Manikyr</h4>
+              <p>
+                Behandling for negler og hender som inkluderer rensing, klipping,
+                forming av negler og pleie av neglebånd.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>500,00 kr</span>
+                <span>45 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Manikyr + fjerning av gammel lakk</h4>
+              <p>
+                Standard manikyr med rensing, klipping, forming og neglebåndspleie,
+                i tillegg til fjerning av gammel lakk.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>700,00 kr</span>
+                <span>75 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Manikyr + gelélakk (med forsterkning av neglene)</h4>
+              <p>
+                Manikyr med gelélakk og forsterkning som jevner ut negleplaten,
+                gir et tynt og slitesterkt resultat med holdbarhet opptil 3-4 uker.
+                Inkluderer fjerning av gammel lakk.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>1 100,00 kr</span>
+                <span>120 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Gelélakk med ekstra design</h4>
+              <p>
+                Manikyr med gelélakk, forsterkning og ekstra design som ombré,
+                chrome/innpulver, stamping og folie. Holdbarhet opptil 3-4 uker.
+                Inkluderer fjerning av gammel lakk.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>1 150,00 kr</span>
+                <span>Varighet etter avtale</span>
+              </div>
+            </article>
+          </div>
+          <a
+            href="https://timma.no/salong/olha-bratash?searchTerms=nails&searchTerms=manicure-and-pedicure&searchTerms=manicure"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >Bestille tid</a>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="product-aside" id="pedikyrAside" aria-hidden="true">
+      <button class="product-aside__backdrop" type="button" aria-label="Lukk panel" data-pedikyr-aside-close></button>
+      <div class="product-aside__panel" role="dialog" aria-modal="true" aria-labelledby="pedikyrAsideTitle">
+        <button class="product-aside__back" type="button" data-pedikyr-aside-close>
+          <span class="logo product-aside__logo" aria-hidden="true"></span>
+          <span>tilbake</span>
+        </button>
+        <div class="product-aside__content">
+          <img src="./assets/icons/img/for timma pedikyr img.jpeg" alt="Pedikyr" loading="lazy" />
+          <h3 id="pedikyrAsideTitle">PEDIKYR</h3>
+          <p class="product-aside__lead">
+            Profesjonell fotpleie med fokus på hygiene, komfort og et varig resultat.
+            Velg behandlingen som passer deg best.
+          </p>
+          <div class="pedikyr-price-list" aria-label="Pedikyr prisliste">
+            <article class="pedikyr-price-item">
+              <h4>Pedikyr (Fotpleie) for kvinner</h4>
+              <p>
+                Kosmetisk behandling av føtter og negler: forming av negler,
+                pleie av hud, fjerning av hard hud, massasje og fuktighetsgivende behandling.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>1 000,00 kr</span>
+                <span>75 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Pedikyr (Fotpleie) for menn</h4>
+              <p>
+                Kosmetisk og hygienisk behandling med apparatbehandling av neglebånd,
+                forming av negler, fjerning av hard hud, fotpleie og avslappende massasje.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>1 100,00 kr</span>
+                <span>75 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Pedikyr + gellakk / monolakk</h4>
+              <p>
+                Pedikyr med gel-lakk for velpleide negler og holdbar farge i opptil 3-4 uker.
+                Anbefales byttet i tide for å beskytte naturneglene.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>1 200,00 kr</span>
+                <span>90 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Pedikyr + vanlig lakk</h4>
+              <p>
+                Full fotpleie med neglebehandling, hudpleie, fjerning av hard hud,
+                massasje og avslutning med vanlig lakk.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>1 150,00 kr</span>
+                <span>90 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>SPA Pedikyr + Mezostrip</h4>
+              <p>
+                Utvidet SPA-behandling med maskinteknikk som stimulerer sirkulasjon,
+                støtter hudfornyelse, lindrer irritasjon og forbedrer hudens beskyttende funksjon.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>1 200,00 kr</span>
+                <span>90 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Konsultasjon med individuell behandling</h4>
+              <p>
+                Profesjonell vurdering av føtter og negler med individuelt tilpasset plan.
+                Behandlingstid 10-30 min.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>Fra 400,00 kr</span>
+                <span>10-30 min</span>
+              </div>
+            </article>
+          </div>
+          <a
+            href="https://timma.no/salong/olha-bratash?searchTerms=nails&searchTerms=manicure-and-pedicure&searchTerms=pedicure"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >Bestille tid</a>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="product-aside" id="elektrolyseAside" aria-hidden="true">
+      <button class="product-aside__backdrop" type="button" aria-label="Lukk panel" data-elektrolyse-aside-close></button>
+      <div class="product-aside__panel" role="dialog" aria-modal="true" aria-labelledby="elektrolyseAsideTitle">
+        <button class="product-aside__back" type="button" data-elektrolyse-aside-close>
+          <span class="logo product-aside__logo" aria-hidden="true"></span>
+          <span>tilbake</span>
+        </button>
+        <div class="product-aside__content">
+          <img src="./assets/icons/img/2025-10-22 11.32.50.jpg" alt="Elektrolyse" loading="lazy" />
+          <h3 id="elektrolyseAsideTitle">ELEKTROLYSE</h3>
+          <p class="product-aside__lead">
+            Permanent hårfjerning med elektrolyse utført med moderne utstyr,
+            presisjon og trygg individuell tilpasning.
+          </p>
+          <div class="pedikyr-price-list" aria-label="Elektrolyse prisliste">
+            <article class="pedikyr-price-item">
+              <h4>Elektrolyse (prøvebehandling)</h4>
+              <p>
+                Anbefales for deg som er ny til elektrolyse. Inkluderer introduksjon
+                til prosedyren og en kort behandling, slik at du kan vurdere komfort,
+                smertetoleranse og behov for bedøvelse før et behandlingskurs.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>450,00 kr</span>
+                <span>30 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Elektrolyse (15 min.)</h4>
+              <p>
+                Moderne og pålitelig metode for fjerning av uønsket hår med langvarig
+                resultat, egnet for alle hud- og hårtyper.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>450,00 kr</span>
+                <span>30 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Elektrolyse (30 min.)</h4>
+              <p>
+                Effektiv behandling for uønsket hår med individuell tilpasning,
+                som gir langvarige resultater for alle hud- og hårtyper.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>750,00 kr</span>
+                <span>45 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Elektrolyse (45 min.)</h4>
+              <p>
+                Utvidet behandlingstid for større områder eller tettere hårvekst,
+                med fokus på komfort og varig resultat.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>950,00 kr</span>
+                <span>60 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Elektrolyse (60 min.)</h4>
+              <p>
+                Dypere behandlingsøkt for mer omfattende arbeid, egnet for alle hud-
+                og hårtyper med langvarig effekt.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>1 250,00 kr</span>
+                <span>75 min</span>
+              </div>
+            </article>
+
+            <article class="pedikyr-price-item">
+              <h4>Elektrolyse (2 timer)</h4>
+              <p>
+                Lang økt for store behandlingsområder eller intensive forløp,
+                med moderne metode som gir varige resultater.
+              </p>
+              <div class="pedikyr-price-item__meta">
+                <span>2 500,00 kr</span>
+                <span>120 min</span>
+              </div>
+            </article>
+          </div>
+          <a
+            href="https://timma.no/salong/olha-bratash?isSearch=true&searchTerms=all&searchTerms=Elektrolyse%20"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >Bestille tid</a>
+        </div>
+      </div>
+    </aside>
+
     <!-- Services Section -->
     <section id="services" class="services">
       <div class="container">
         <h2>KURS</h2>
         <div class="portfolio-grid">
           <div class="portfolio-wrapper">
-            <a href="#contact" class="portfolio-item">
+            <a href="#contact" class="portfolio-item" id="manikyrCourseBasicCard">
               <img src="./assets/icons/img/MARK8575.jpg" alt="Manikyr kurs" loading="lazy" />
               <h3>MANIKYR KURS</h3>
               <h4>GRUNNLEGGENDE</h4>
@@ -340,7 +531,7 @@
             </div>
           </div>
           <div class="portfolio-wrapper">
-            <a href="#contact" class="portfolio-item">
+            <a href="#contact" class="portfolio-item" id="manikyrCourseAdvancedCard">
               <img src="./assets/icons/img/2025-10-22 11.32.50.jpg" alt="Elektrolyse kurs" loading="lazy" />
               <h3>MANIKYR KURS</h3>
               <h4>videregående opplæringskurs</h4>
@@ -361,7 +552,7 @@
             </div>
           </div>
           <div class="portfolio-wrapper">
-            <a href="#contact" class="portfolio-item">
+            <a href="#contact" class="portfolio-item" id="pedikyrCourseBasicCard">
               <img src="./assets/icons/img/for timma pedikyr img.jpeg" alt="Pedikyr kurs" loading="lazy" />
               <h3>PEDIKYR KURS</h3>
               <h4>GRUNNLEGGENDE</h4>
@@ -384,6 +575,127 @@
         </div>
       </div>
     </section>
+
+    <aside class="product-aside" id="manikyrCourseBasicAside" aria-hidden="true">
+      <button class="product-aside__backdrop" type="button" aria-label="Lukk panel" data-manikyr-course-basic-close></button>
+      <div class="product-aside__panel" role="dialog" aria-modal="true" aria-labelledby="manikyrCourseBasicTitle">
+        <button class="product-aside__back" type="button" data-manikyr-course-basic-close>
+          <span class="logo product-aside__logo" aria-hidden="true"></span>
+          <span>tilbake</span>
+        </button>
+        <div class="product-aside__content">
+          <img src="./assets/icons/img/MARK8575.jpg" alt="Manikyr kurs grunnleggende" loading="lazy" />
+          <h3 id="manikyrCourseBasicTitle">MANIKYR KURS - GRUNNLEGGENDE</h3>
+          <p class="product-aside__lead">
+            Et intensivt introduksjonskurs for deg som vil starte med profesjonell
+            manikyr fra bunnen av.
+          </p>
+          <div class="pedikyr-price-list" aria-label="Manikyr kurs grunnleggende informasjon">
+            <article class="pedikyr-price-item">
+              <h4>Hva du lærer</h4>
+              <p>
+                Hygiene, sikker arbeidsrutine, korrekt filteknikk, neglebåndsarbeid,
+                produktkunnskap og klassisk salongmanikyr.
+              </p>
+            </article>
+            <article class="pedikyr-price-item">
+              <h4>Format</h4>
+              <p>
+                Små grupper med tett oppfølging, demonstrasjoner og praksis på modeller.
+              </p>
+            </article>
+            <article class="pedikyr-price-item">
+              <h4>Resultat</h4>
+              <p>
+                Du får et solid fundament for å jobbe trygt, effektivt og profesjonelt.
+              </p>
+            </article>
+          </div>
+          <a href="#contact" class="btn btn-primary" data-manikyr-course-basic-close>Send foresporsel</a>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="product-aside" id="manikyrCourseAdvancedAside" aria-hidden="true">
+      <button class="product-aside__backdrop" type="button" aria-label="Lukk panel" data-manikyr-course-advanced-close></button>
+      <div class="product-aside__panel" role="dialog" aria-modal="true" aria-labelledby="manikyrCourseAdvancedTitle">
+        <button class="product-aside__back" type="button" data-manikyr-course-advanced-close>
+          <span class="logo product-aside__logo" aria-hidden="true"></span>
+          <span>tilbake</span>
+        </button>
+        <div class="product-aside__content">
+          <img src="./assets/icons/img/2025-10-22 11.32.50.jpg" alt="Manikyr kurs videregaende" loading="lazy" />
+          <h3 id="manikyrCourseAdvancedTitle">MANIKYR KURS - VIDEREGAENDE</h3>
+          <p class="product-aside__lead">
+            Videregaende opplaring for stylister som vil forbedre tempo, kvalitet
+            og avanserte salongteknikker.
+          </p>
+          <div class="pedikyr-price-list" aria-label="Manikyr kurs videregaende informasjon">
+            <article class="pedikyr-price-item">
+              <h4>Faglig fokus</h4>
+              <p>
+                Perfeksjon av arkitektur, jevn apex, presis finish og teknikker
+                for lang holdbarhet.
+              </p>
+            </article>
+            <article class="pedikyr-price-item">
+              <h4>Designmoduler</h4>
+              <p>
+                Ombre, chrome, minimale art-elementer og kommersielle design som
+                kunder etterspor i salong.
+              </p>
+            </article>
+            <article class="pedikyr-price-item">
+              <h4>Mentoring</h4>
+              <p>
+                Personlig tilbakemelding med forbedringsplan for teknikk og arbeidsflyt.
+              </p>
+            </article>
+          </div>
+          <a href="#contact" class="btn btn-primary" data-manikyr-course-advanced-close>Send foresporsel</a>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="product-aside" id="pedikyrCourseBasicAside" aria-hidden="true">
+      <button class="product-aside__backdrop" type="button" aria-label="Lukk panel" data-pedikyr-course-basic-close></button>
+      <div class="product-aside__panel" role="dialog" aria-modal="true" aria-labelledby="pedikyrCourseBasicTitle">
+        <button class="product-aside__back" type="button" data-pedikyr-course-basic-close>
+          <span class="logo product-aside__logo" aria-hidden="true"></span>
+          <span>tilbake</span>
+        </button>
+        <div class="product-aside__content">
+          <img src="./assets/icons/img/for timma pedikyr img.jpeg" alt="Pedikyr kurs grunnleggende" loading="lazy" />
+          <h3 id="pedikyrCourseBasicTitle">PEDIKYR KURS - GRUNNLEGGENDE</h3>
+          <p class="product-aside__lead">
+            Praktisk kurs i fotpleie og estetisk pedikyr for nybegynnere som vil
+            bygge en trygg start i faget.
+          </p>
+          <div class="pedikyr-price-list" aria-label="Pedikyr kurs grunnleggende informasjon">
+            <article class="pedikyr-price-item">
+              <h4>Program</h4>
+              <p>
+                Anatomi og hygiene, korrekt verktOybruk, behandling av hard hud,
+                neglebehandling og salongprotokoller.
+              </p>
+            </article>
+            <article class="pedikyr-price-item">
+              <h4>Praksis</h4>
+              <p>
+                Trening pa modeller med stegvis veiledning for kvalitet og sikkerhet.
+              </p>
+            </article>
+            <article class="pedikyr-price-item">
+              <h4>Etter kurset</h4>
+              <p>
+                Du far et tydelig arbeidsgrunnlag og trygghet til a starte med kunder.
+              </p>
+            </article>
+          </div>
+          <a href="#contact" class="btn btn-primary" data-pedikyr-course-basic-close>Send foresporsel</a>
+        </div>
+      </div>
+    </aside>
 
     <!-- FAQ Section -->
     <section id="faq" class="faq-section">
@@ -442,14 +754,58 @@
             </div>
           </div>
           <form class="contact-form" id="contactForm" action="https://formspree.io/f/mykbrjdz" method="POST">
-            <input type="text" name="name" placeholder="Ditt navn" required />
-            <input type="email" name="email" placeholder="Din e-post" required />
-            <textarea
-              name="message"
-              placeholder="Din melding"
-              rows="5"
-              required
-            ></textarea>
+              <input type="hidden" name="subject" value="Ny melding fra Filigrana Studio fra {{ name }}" />
+              <div class="studio-signal-field" aria-hidden="true">
+                <label for="contactWebsite">La dette feltet sta tomt</label>
+                <input
+                  type="text"
+                  id="contactWebsite"
+                  name="_gotcha"
+                  tabindex="-1"
+                  autocomplete="off"
+                  inputmode="none"
+                />
+              </div>
+              <div class="form-field">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Ditt navn"
+                  aria-label="Ditt navn"
+                  autocomplete="name"
+                  minlength="2"
+                  maxlength="80"
+                  pattern="[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-Яа-яЁёЇїІіЄєҐґ' -]{2,80}"
+                  required
+                />
+                <p class="field-error" id="nameError" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Din e-post"
+                  aria-label="Din e-post"
+                  autocomplete="email"
+                  inputmode="email"
+                  maxlength="120"
+                  required
+                />
+                <p class="field-error" id="emailError" aria-live="polite"></p>
+              </div>
+              <div class="form-field">
+                <textarea
+                  name="message"
+                  placeholder="Din melding"
+                  aria-label="Din melding"
+                  rows="5"
+                  minlength="10"
+                  maxlength="1000"
+                  required
+                ></textarea>
+                <p class="field-error" id="messageError" aria-live="polite"></p>
+              </div>
+              <div class="form-status" id="formStatus" aria-live="polite"></div>
             <button type="submit" class="btn btn-primary">Send</button>
           </form>
         </div>
@@ -464,7 +820,7 @@
         <p>&copy; 2026 Filigrana Studio. All rights reserved.</p>
         <div class="footer-credits">
           <span>Foto: <a href="https://www.instagram.com/_marvar_/" target="_blank" rel="noopener noreferrer">@_marvar_</a></span>
-          <span>Design & utvikling: Filigrana inc</span>
+          <span><a href="https://www.instagram.com/filigrana.inc/" target="_blank" rel="noopener noreferrer">Design & utvikling: Filigrana inc</a></span>
         </div>
       </div>
     </footer>

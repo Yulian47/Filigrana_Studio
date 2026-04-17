@@ -5,6 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function initializeApp() {
+  // Try to keep portrait orientation on supported mobile browsers
+  initMobileOrientationLock();
+
+  // Initialize product side panels
+  initProductAsides();
+
   // Initialize smooth scrolling for navigation links
   initSmoothScroll();
 
@@ -15,6 +21,91 @@ function initializeApp() {
   initMobileMenu();
 
   console.log("Filigrana Studio initialized");
+}
+
+function initProductAsides() {
+  const panels = [
+    {
+      triggerId: "manikyrCourseBasicCard",
+      asideId: "manikyrCourseBasicAside",
+      closeSelector: "[data-manikyr-course-basic-close]",
+    },
+    {
+      triggerId: "manikyrCourseAdvancedCard",
+      asideId: "manikyrCourseAdvancedAside",
+      closeSelector: "[data-manikyr-course-advanced-close]",
+    },
+    {
+      triggerId: "pedikyrCourseBasicCard",
+      asideId: "pedikyrCourseBasicAside",
+      closeSelector: "[data-pedikyr-course-basic-close]",
+    },
+    {
+      triggerId: "manikyrCard",
+      asideId: "manikyrAside",
+      closeSelector: "[data-manikyr-aside-close]",
+    },
+    {
+      triggerId: "pedikyrCard",
+      asideId: "pedikyrAside",
+      closeSelector: "[data-pedikyr-aside-close]",
+    },
+    {
+      triggerId: "elektrolyseCard",
+      asideId: "elektrolyseAside",
+      closeSelector: "[data-elektrolyse-aside-close]",
+    },
+  ];
+
+  const closeAllAsides = function () {
+    panels.forEach(function (panelConfig) {
+      const aside = document.getElementById(panelConfig.asideId);
+      if (!aside) return;
+      aside.classList.remove("is-open");
+      aside.setAttribute("aria-hidden", "true");
+    });
+    document.body.classList.remove("aside-open");
+  };
+
+  panels.forEach(function (panelConfig) {
+    const trigger = document.getElementById(panelConfig.triggerId);
+    const aside = document.getElementById(panelConfig.asideId);
+    if (!trigger || !aside) return;
+
+    const closeButtons = aside.querySelectorAll(panelConfig.closeSelector);
+
+    trigger.addEventListener("click", function (event) {
+      event.preventDefault();
+      closeAllAsides();
+      aside.classList.add("is-open");
+      aside.setAttribute("aria-hidden", "false");
+      document.body.classList.add("aside-open");
+    });
+
+    closeButtons.forEach(function (button) {
+      button.addEventListener("click", closeAllAsides);
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeAllAsides();
+    }
+  });
+}
+
+function initMobileOrientationLock() {
+  const isMobileViewport = window.matchMedia("(max-width: 768px)").matches;
+  if (!isMobileViewport || !screen.orientation?.lock) return;
+
+  const lockToPortrait = function () {
+    screen.orientation.lock("portrait").catch(function () {
+      // Some browsers allow orientation lock only in fullscreen/PWA context.
+    });
+  };
+
+  lockToPortrait();
+  window.addEventListener("orientationchange", lockToPortrait);
 }
 
 // Smooth Scrolling
@@ -45,30 +136,88 @@ function initContactForm() {
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
+    const fields = {
+      name: contactForm.querySelector('input[name="name"]'),
+      email: contactForm.querySelector('input[name="email"]'),
+      message: contactForm.querySelector('textarea[name="message"]'),
+    };
+    const errors = {
+      name: document.getElementById("nameError"),
+      email: document.getElementById("emailError"),
+      message: document.getElementById("messageError"),
+    };
+    const formStatus = document.getElementById("formStatus");
+    const blockedNameValues = new Set([
+      "test",
+      "tester",
+      "asdf",
+      "qwerty",
+      "name",
+    ]);
+    const blockedEmailDomains = new Set([
+      "example.com",
+      "test.com",
+      "mailinator.com",
+      "tempmail.com",
+      "fakeinbox.com",
+    ]);
+
+    const validateField = function (fieldName) {
+      const field = fields[fieldName];
+      if (!field) return true;
+
+      const value = field.value.trim();
+      let errorMessage = "";
+
+      if (fieldName === "name") {
+        errorMessage = validateName(value, blockedNameValues);
+      }
+
+      if (fieldName === "email") {
+        errorMessage = validateEmail(value, blockedEmailDomains);
+      }
+
+      if (fieldName === "message") {
+        errorMessage = validateMessage(value);
+      }
+
+      setFieldState(field, errors[fieldName], errorMessage);
+      return !errorMessage;
+    };
+
+    Object.entries(fields).forEach(function ([fieldName, field]) {
+      field.addEventListener("input", function () {
+        validateField(fieldName);
+        clearFormStatus(formStatus);
+      });
+
+      field.addEventListener("blur", function () {
+        validateField(fieldName);
+      });
+    });
+
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      // Get form values
-      const name = this.querySelector('input[name="name"]').value;
-      const email = this.querySelector('input[name="email"]').value;
-      const message = this.querySelector('textarea[name="message"]').value;
+      const isFormValid = Object.keys(fields)
+        .map(function (fieldName) {
+          return validateField(fieldName);
+        })
+        .every(Boolean);
 
-      // Simple validation
-      if (!name.trim() || !email.trim() || !message.trim()) {
-        alert("Vennligst fyll ut alle feltene");
+      if (!isFormValid) {
+        setFormStatus(
+          formStatus,
+          "error",
+          "Sjekk feltene og rett opp feilene før du sender meldingen.",
+        );
         return;
       }
 
-      // Email validation
-      if (!isValidEmail(email)) {
-        alert("Vennligst skriv inn en gyldig e-postadresse");
-        return;
-      }
-
-      // Send via Formspree
       const submitBtn = this.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = "Sender...";
+      clearFormStatus(formStatus);
 
       fetch(this.action, {
         method: "POST",
@@ -77,14 +226,29 @@ function initContactForm() {
       })
         .then(function (response) {
           if (response.ok) {
-            alert("Takk for din melding! Vi tar kontakt med deg snart.");
+            setFormStatus(
+              formStatus,
+              "success",
+              "Takk for din melding! Vi tar kontakt med deg snart.",
+            );
             contactForm.reset();
+            Object.entries(fields).forEach(function ([fieldName, field]) {
+              setFieldState(field, errors[fieldName], "");
+            });
           } else {
-            alert("Noe gikk galt. Vennligst prøv igjen.");
+            setFormStatus(
+              formStatus,
+              "error",
+              "Noe gikk galt. Vennligst prøv igjen.",
+            );
           }
         })
         .catch(function () {
-          alert("Noe gikk galt. Vennligst prøv igjen.");
+          setFormStatus(
+            formStatus,
+            "error",
+            "Noe gikk galt. Vennligst prøv igjen.",
+          );
         })
         .finally(function () {
           submitBtn.disabled = false;
@@ -98,6 +262,95 @@ function initContactForm() {
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(email);
+}
+
+function validateName(value, blockedNameValues) {
+  if (!value) {
+    return "Navn er obligatorisk.";
+  }
+
+  if (value.length < 2) {
+    return "Navnet må være minst 2 tegn langt.";
+  }
+
+  if (/\d/.test(value)) {
+    return "Navnet kan ikke inneholde tall.";
+  }
+
+  if (!/^[A-Za-zÀ-ÖØ-öø-ÿĀ-žА-Яа-яЁёЇїІіЄєҐґ' -]+$/.test(value)) {
+    return "Bruk kun bokstaver, mellomrom, apostrof eller bindestrek i navnet.";
+  }
+
+  if (blockedNameValues.has(value.toLowerCase())) {
+    return "Skriv inn navnet ditt i stedet for en testverdi.";
+  }
+
+  if (/^(.)\1{2,}$/.test(value.replace(/\s+/g, ""))) {
+    return "Navnet ser ikke gyldig ut.";
+  }
+
+  return "";
+}
+
+function validateEmail(value, blockedEmailDomains) {
+  if (!value) {
+    return "E-post er obligatorisk.";
+  }
+
+  if (!isValidEmail(value)) {
+    return "Skriv inn en gyldig e-postadresse.";
+  }
+
+  const domain = value.split("@")[1]?.toLowerCase();
+  if (domain && blockedEmailDomains.has(domain)) {
+    return "Bruk en ekte e-postadresse, ikke en test- eller midlertidig adresse.";
+  }
+
+  return "";
+}
+
+function validateMessage(value) {
+  if (!value) {
+    return "Melding er obligatorisk.";
+  }
+
+  if (value.length < 10) {
+    return "Meldingen må være minst 10 tegn lang.";
+  }
+
+  if (/^(.)\1{9,}$/.test(value.replace(/\s+/g, ""))) {
+    return "Meldingen ser ikke gyldig ut.";
+  }
+
+  if (/(https?:\/\/|www\.)/i.test(value)) {
+    return "Lenker er ikke tillatt i meldingsfeltet.";
+  }
+
+  return "";
+}
+
+function setFieldState(field, errorElement, message) {
+  const hasError = Boolean(message);
+  field.classList.toggle("is-invalid", hasError);
+  field.setAttribute("aria-invalid", String(hasError));
+
+  if (errorElement) {
+    errorElement.textContent = message;
+  }
+}
+
+function setFormStatus(element, type, message) {
+  if (!element) return;
+
+  element.className = "form-status";
+  if (type) {
+    element.classList.add(`form-status--${type}`);
+  }
+  element.textContent = message;
+}
+
+function clearFormStatus(element) {
+  setFormStatus(element, "", "");
 }
 
 // Mobile Menu Toggle (for future mobile menu implementation)
